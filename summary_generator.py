@@ -3,6 +3,8 @@ import openai
 from pathlib import Path
 from dotenv import load_dotenv
 
+from video_utils import get_video_id, get_video_url
+
 if __name__ == '__main__':
     load_dotenv()
     book = input('What book summary would you like? ')
@@ -42,3 +44,8 @@ if __name__ == '__main__':
     (summaries_dir / f"{book.replace(' ', '_')}_as_a_{speaker.replace(' ', '_')}.txt").write_text(txt)
 
     print("done!")
+
+    video_id = get_video_id(txt)
+    print(video_id)
+    video_url = get_video_url(video_id)
+    print(video_url)
