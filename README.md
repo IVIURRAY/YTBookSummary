@@ -21,3 +21,6 @@ result_url not found, trying again...
 
 https://d-id-talks-prod.s3.us-west-2.amazonaws.com/authabc123
 ```
+
+## Setup YouTube Upload
+1. Follow [this](https://www.youtube.com/watch?v=aFwZgth790Q) video to replace [`client_secrets.json`](client_secrets.json) with your keys.

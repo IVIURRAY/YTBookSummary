@@ -4,8 +4,10 @@ from distutils.util import strtobool
 import openai
 from pathlib import Path
 from dotenv import load_dotenv
-
 from video_utils import get_video_id, get_video_url
+
+load_dotenv()
+openai.api_key = os.getenv("OPEN_API_KEY")
 
 
 def write_txt_to_file(txt: str, book: str, speaker: str):
@@ -62,9 +64,6 @@ def generate_book_summary(structure_content: str, book: str, speaker: str) -> st
 
 
 if __name__ == "__main__":
-    load_dotenv()
-    openai.api_key = os.getenv("OPEN_API_KEY")
-
     book = input("What book summary would you like? ")
     speaker = input(
         "What speaking style would you like to use? (e.g. cowboy, vampire) "
