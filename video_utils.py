@@ -5,7 +5,7 @@ import time
 from dotenv import load_dotenv
 
 
-def get_video_id(summary_text: str):
+def get_video_id(summary_text: str, image_url: str = None):
     url = "https://api.d-id.com/talks"
     payload = {
         "script": {
@@ -15,7 +15,10 @@ def get_video_id(summary_text: str):
             "input": summary_text,
         },
         "config": {"fluent": "false", "pad_audio": "0.0"},
-        "source_url": "https://create-images-results.d-id.com/api_docs/assets/noelle.jpeg",
+        "source_url": (
+            image_url
+            or "https://create-images-results.d-id.com/api_docs/assets/noelle.jpeg"
+        ),
     }
     headers = {
         "accept": "application/json",

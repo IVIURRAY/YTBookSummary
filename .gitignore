@@ -133,3 +133,6 @@ dmypy.json
 *-oauth2.json
 summaries
 client_secrets.json
+
+# Images
+images/
